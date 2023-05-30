@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import NxLogin from '../components/Login.vue'
+import NxLogin from '../components/Login/Login.vue'
 
 Vue.use(VueRouter)
 
