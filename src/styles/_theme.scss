@@ -6,7 +6,29 @@ $colors: (
   secodary: #E5E5E5
 );
 
+$font-sizes: (
+  xsmall: 0.2rem,
+);
+
 $font-weights: (
   normal: 400,
   bold: 500,
 );
+
+@function themeFontSize($key) {
+  @if map-has-key($font-sizes, $key) {
+    @return map-get($font-sizes, $key);
+  }
+
+  @warn "Unkown '#{$key}' in $font-sizes.";
+  @return null;
+}
+
+@function themeColor($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unkown '#{$key}' in $font-sizes.";
+  @return null;
+}
