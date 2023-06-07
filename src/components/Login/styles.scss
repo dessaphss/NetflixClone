@@ -1,7 +1,22 @@
+.login{
+     background-image: url(../../assets/login-image.jpg);
+}
+
+.logo svg {
+    margin: 1.43rem;
+}
+
+.login-form-main h1 {
+    color: themeColor(lightText);
+    font-size: themeFontSize(xlarge);
+    font-weight: themeFontWeight(bold);
+    color: red;
+}
+
 .icon-netflix {
     width: 10.43rem;
     height: 2.81rem;
-    fill: #e50914;
+    fill: themeColor(primary);
 }
 
 .login-content{
@@ -12,4 +27,41 @@
     padding: 60px 68px 40px;
     max-width: 1200px;
     margin: 0 auto;  
+}
+
+.input-email-phone input {
+    width: 314px;
+    height: 50px;
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+    &::placeholder {
+        color: #8c8c8c;
+    }
+}
+
+.input-password input {
+    width: 314px;
+    height: 50px;
+    padding: 16px 20px;
+    border-radius: 4px;
+    &::placeholder {
+        color: #8c8c8c;
+    }
+}
+
+.input-password {
+    position: relative;
+    & .show-button {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+    }
+}
+
+.input-password input {
+    padding-right: 40px;
 }

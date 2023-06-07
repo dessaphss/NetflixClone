@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Montserrat:wght@400;600&family=Prompt:wght@100;400;500;700;800&display=swap");
 
 $theme-font-family: "Prompt";
+
 $colors: (
-  primary: #E50914,
-  secodary: #E5E5E5
+  primary: var(--primary-color),
+  secondary: var(--secondary-color),
+  lightText: #fff,
 );
 
 $font-sizes: (
   xsmall: 0.2rem,
+  xlarge: 2rem,
+  medium: 1.6rem,
 );
 
 $font-weights: (
@@ -28,7 +32,14 @@ $font-weights: (
   @if map-has-key($colors, $key) {
     @return map-get($colors, $key);
   }
+  @return null;
+}
 
-  @warn "Unkown '#{$key}' in $font-sizes.";
+@function themeFontWeight($key) {
+  @if map-has-key($font-weights, $key) {
+    @return map-get($font-weights, $key)
+  }
+
+  @warn "Unkown '#{$key}' in $font-weights.";
   @return null;
 }
