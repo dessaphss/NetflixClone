@@ -1,67 +1,134 @@
-.login{
-     background-image: url(../../assets/login-image.jpg);
+.login-form-main {
+  color: themeColor(darkText);
+}
+
+.login {
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/login-image.jpg);
+     height: 100vh;
 }
 
 .logo svg {
     margin: 1.43rem;
-}
-
-.login-form-main h1 {
-    color: themeColor(lightText);
-    font-size: themeFontSize(xlarge);
-    font-weight: themeFontWeight(bold);
-    color: red;
-}
-
-.icon-netflix {
     width: 10.43rem;
     height: 2.81rem;
     fill: themeColor(primary);
 }
 
-.login-content{
+.login-content {
     background-color: rgba(0,0,0,.75);
     border-radius: 0.25rem;
-    width: 450px;
-    height: 660px;
-    padding: 60px 68px 40px;
+    width: 28rem;
+    height: 41rem;
+    padding: 3.75rem 4.25rem 2.5rem;
     max-width: 1200px;
-    margin: 0 auto;  
-}
+    margin: 0 auto;
 
-.input-email-phone input {
-    width: 314px;
-    height: 50px;
-    padding: 16px 20px;
-    border-radius: 4px;
-    margin-bottom: 32px;
-    &::placeholder {
-        color: #8c8c8c;
+    & h1 {
+        color: themeColor(lightText);
+        font-size: themeFontSize(xlarge);
+        font-weight: themeFontWeight(bold);
+        padding-bottom: themeSpacings(xxsmall);
     }
 }
 
-.input-password input {
-    width: 314px;
-    height: 50px;
-    padding: 16px 20px;
-    border-radius: 4px;
+.custom-input {
+    width: 19rem;
+    height: 3.12rem;
+    padding: 1rem 1.25rem;
+    border-radius: .25rem;
+    margin-bottom: themeSpacings(xxsmall);
+    outline: none;
+    background-color: themeColor(bg);
+    border: 1px solid themeColor(bg);
+    color: themeColor(lightText);
     &::placeholder {
-        color: #8c8c8c;
+        font-size: 1rem;
     }
 }
 
-.input-password {
+.password-wrapper {
     position: relative;
-    & .show-button {
+}
+
+.password-wrapper .show-button {
+    position: absolute;
+    top: 40%;
+    right: 1.18rem;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    color: themeColor(darkText);
+}
+
+.login-button {
+    width: 19rem;
+    height: 3.12rem;
+    border-radius: .25rem;
+    background: themeColor(primary);
+    font-size: themeFontSize(medium);
+    color: themeColor(lightText);
+    font-weight: themeFontWeight(medium);
+    margin: 1.5rem 0 .75rem;
+}
+
+.login-form-help {
+    display: flex;
+    font-size: themeFontSize(small);
+    justify-content: space-between;
+    font-weight: themeFontWeight(bold);
+    & .login-remember {
+        display: flex;
+        gap: .31rem;
+    }
+}
+
+.custom-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1.06rem;
+    height: 1.06rem;
+    border: .12rem solid themeColor(lightText);
+    border-radius: .18rem;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background-color: themeColor(lightText);
+  
+    &:checked {
+      background-color: themeColor(darkText);
+  
+      &::before {
+        content: "\2714";
         position: absolute;
         top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        background-color: transparent;
-        border: none;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: themeFontSize(medium);
+        border-color: themeColor(darkText);
+      }
     }
-}
+  }
 
-.input-password input {
-    padding-right: 40px;
-}
+  .form-other {
+    & a {
+        cursor: pointer;
+        padding-left: themeSpacings(xxxsmall); 
+    } a:hover {
+        text-decoration: underline;
+    }
+    .login-signup {
+        margin: 3.75rem 0 .62rem;
+        & a {
+            color: themeColor(lightText);
+        }
+      }
+    
+    .login-recaptcha {
+        font-size: themeFontSize(small);
+        & a {
+            color: #0071eb;
+        }
+    }
+  }
