@@ -1,18 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Montserrat:wght@400;600&family=Prompt:wght@100;400;500;700;800&display=swap");
 
 $theme-font-family: "Prompt";
+
 $colors: (
-  primary: #E50914,
-  secodary: #E5E5E5
+  primary: var(--primary-color),
+  secondary: var(--secondary-color),
+  bg: var(--bg-theme-color),
+  lightText: #fff,
+  darkText: #8c8c8c,
 );
 
 $font-sizes: (
   xsmall: 0.2rem,
+  small: 0.813rem,
+  medium: 1rem,
+  xlarge: 2rem,
 );
 
 $font-weights: (
-  normal: 400,
+  regular: 400,
+  medium: 600,
   bold: 500,
+);
+
+$spacings: (
+  xxxsmall: 0.31rem,
+  xxsmall: 1rem,
+  xsmall: 1.6rem,
+  small: 2.4rem,
+  medium: 3.2rem,
+  large: 4rem,
+  xlarge: 4.8rem,
+  xxlarge: 5.6rem,
 );
 
 @function themeFontSize($key) {
@@ -28,7 +47,23 @@ $font-weights: (
   @if map-has-key($colors, $key) {
     @return map-get($colors, $key);
   }
+  @return null;
+}
 
-  @warn "Unkown '#{$key}' in $font-sizes.";
+@function themeFontWeight($key) {
+  @if map-has-key($font-weights, $key) {
+    @return map-get($font-weights, $key)
+  }
+
+  @warn "Unkown '#{$key}' in $font-weights.";
+  @return null;
+}
+
+@function themeSpacings($key) {
+  @if map-has-key($spacings, $key) {
+    @return map-get($spacings, $key);
+  }
+
+  @warn "Unkown '#{$key}' in $spacings.";
   @return null;
 }
