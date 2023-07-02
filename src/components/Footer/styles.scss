@@ -1,0 +1,40 @@
+footer {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 2rem 15rem;
+    color: themeColor(darkText);
+    margin-top: 5.93rem;
+    height: 13rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 1033px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.links-help {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.18rem;
+    row-gap: .313rem;
+    padding-top: themeSpacings(xsmall);
+    font-size: themeFontSize(small);
+    
+    & li {
+        margin: 0;
+        width: calc(25% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+    .links-help li {
+      width: 50%;
+    }
+}
+

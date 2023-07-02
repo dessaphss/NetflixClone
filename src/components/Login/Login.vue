@@ -33,8 +33,6 @@
                 <input
                   :type="inputType"
                   v-model="password"
-                  @focus="handleInputEvent"
-                  @blur="handleInputEvent"
                   class="custom-input"
                   placeholder="Senha"
                 >
@@ -71,26 +69,36 @@
         </div>
       </div>
     </section>
+    <nx-footer :links="footerLinks" />
   </div>
 </template>
 
 <script>
+import NxFooter from '@/components/Footer/Footer'
 export default {
   name: 'NxLogin',
+  components: {
+    NxFooter
+  },
   data () {
     return {
-      password: '',
       email: '',
+      password: '',
+      showButton: true,
       visiblePassword: false,
-      showButton: false
+      footerLinks: [
+        { id: 1, text: 'Perguntas frequentes', url: 'https://help.netflix.com/en/node/412' },
+        { id: 2, text: 'Central de Ajuda', url: 'https://help.netflix.com/en/' },
+        { id: 3, text: 'Termos de Uso', url: 'https://help.netflix.com/legal/termsofuse' },
+        { id: 4, text: 'Privacidade', url: 'https://help.netflix.com/legal/privacy' },
+        { id: 5, text: 'Preferências de cookies', url: '' },
+        { id: 6, text: 'Informações corporativas', url: 'https://help.netflix.com/legal/corpinfo' }
+      ]
     }
   },
   methods: {
     togglePasswordVisibility () {
       this.visiblePassword = !this.visiblePassword
-    },
-    handleInputEvent () {
-      this.showButton = this.password !== ''
     }
   },
   computed: {
